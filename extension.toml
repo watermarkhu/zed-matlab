@@ -9,11 +9,5 @@ authors = [
 repository = "https://github.com/watermarkhu/zed-matlab"
 
 [grammars.matlab]
-repository = "https://github.com/watermarkhu/tree-sitter-matlab"
-rev = "eceb33ad9e03b4d0fefb7bcc1979338acfd3f512"
-# repository = "https://github.com/acristoffers/tree-sitter-matlab"
-# rev = "1b00a65f0aaac18ffce62d17078f241adc633c9b"
-
-[language_servers.matlab-language-server]
-name = "MATLAB Language Server"
-languages = ["MATLAB"]
+repository = "https://github.com/acristoffers/tree-sitter-matlab"
+rev = "4bf6fa59af581e37753b374991421a95e1021b53"
