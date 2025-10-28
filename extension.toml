@@ -10,6 +10,10 @@ repository = "https://github.com/watermarkhu/zed-matlab"
 
 [grammars.matlab]
 repository = "https://github.com/watermarkhu/tree-sitter-matlab"
-rev = "24b626422ec12d08831e3d4fcbb5978aff77a3cf"
+rev = "eceb33ad9e03b4d0fefb7bcc1979338acfd3f512"
 # repository = "https://github.com/acristoffers/tree-sitter-matlab"
 # rev = "1b00a65f0aaac18ffce62d17078f241adc633c9b"
+
+[language_servers.matlab-language-server]
+name = "MATLAB Language Server"
+languages = ["MATLAB"]
