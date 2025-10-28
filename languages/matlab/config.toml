@@ -1,0 +1,4 @@
+name = "MATLAB"
+grammar = "matlab"
+path_suffixes = [".m"]
+line_comment = "%"
