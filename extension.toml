@@ -9,5 +9,7 @@ authors = [
 repository = "https://github.com/watermarkhu/zed-matlab"
 
 [grammars.matlab]
-repository = "https://github.com/acristoffers/tree-sitter-matlab"
-commit = "1b00a65f0aaac18ffce62d17078f241adc633c9b"
+repository = "https://github.com/watermarkhu/tree-sitter-matlab"
+rev = "24b626422ec12d08831e3d4fcbb5978aff77a3cf"
+# repository = "https://github.com/acristoffers/tree-sitter-matlab"
+# rev = "1b00a65f0aaac18ffce62d17078f241adc633c9b"
