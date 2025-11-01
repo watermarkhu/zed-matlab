@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "customManagers": [
+    {
+      "depNameTemplate": "tree-sitter-matlab",
+      "datasourceTemplate": "github-tags",
+      "registryUrlTemplate": "https://github.com/acristoffers/tree-sitter-matlab",
+      "customType": "regex",
+      "fileMatch": ["extension\\.toml$"],
+
+      // Match the pattern: repository = "..." followed by rev = "<sha>"
+      "matchStrings": [
+        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentValue>[a-f0-9]{40})\""
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      // Apply to tree-sitter-matlab updates
+      "matchDatasources": ["github-tags"],
+      "matchPackagePatterns": ["tree-sitter-matlab"],
+
+      // Use conventional commits format
+      "semanticCommits": true,
+      "semanticCommitType": "fix", // All updates are patches (fix commits)
+      "semanticCommitScope": "deps",
+      "prTitleTemplate": "fix(deps): update tree-sitter-matlab to {{{newVersion}}}",
+
+      // Disable auto-merge for manual review
+      "automerge": false,
+
+      // Prevent duplicate PRs
+      "prCreation": "not-pending",
+      "labels": ["dependencies", "tree-sitter-matlab"]
+    }
+  ]
+}
