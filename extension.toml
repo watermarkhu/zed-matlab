@@ -10,7 +10,7 @@ repository = "https://github.com/watermarkhu/zed-matlab"
 
 [grammars.matlab]
 repository = "https://github.com/acristoffers/tree-sitter-matlab"
-rev = "4bf6fa59af581e37753b374991421a95e1021b53"
+rev = "2e60b9e96774e52edd91cbef37ead8f46c6e1221"
 
 [language_servers.matlab-language-server]
 name = "MATLAB LSP"
