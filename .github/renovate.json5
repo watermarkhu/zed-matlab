@@ -27,7 +27,7 @@
       "matchDatasources": ["git-refs"],
       "matchDepNames": ["tree-sitter-matlab"],
       "semanticCommits": "enabled",
-      "semanticCommitType": "fix",
+      "semanticCommitType": "refactor",
       "semanticCommitScope": "deps",
       "commitMessageTopic": "tree-sitter-matlab",
       "commitMessageAction": "update",
