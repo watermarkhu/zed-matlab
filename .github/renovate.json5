@@ -11,16 +11,14 @@
   ],
   "customManagers": [
     {
-      "depNameTemplate": "tree-sitter-matlab",
-      "datasourceTemplate": "github-tags",
-      "packageName": "acristoffers/tree-sitter-matlab",
       "customType": "regex",
       "fileMatch": ["extension\\.toml$"],
-
-      // Match the pattern: repository = "..." followed by rev = "<sha>"
       "matchStrings": [
-        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentValue>[a-f0-9]{40})\""
-      ]
+        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentDigest>[a-f0-9]{40})\""
+      ],
+      "depNameTemplate": "tree-sitter-matlab",
+      "datasourceTemplate": "git-refs",
+      "packageNameTemplate": "https://github.com/acristoffers/tree-sitter-matlab"
     }
   ],
   "packageRules": [
