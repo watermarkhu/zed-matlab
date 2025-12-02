@@ -33,7 +33,7 @@
       "semanticCommits": true,
       "semanticCommitType": "fix",
       "semanticCommitScope": "deps",
-      "prTitleTemplate": "fix(deps): update tree-sitter-matlab to {{{newVersion}}}",
+      "prTitle": "fix(deps): update tree-sitter-matlab to {{{newVersion}}}",
 
       // Disable auto-merge for manual review
       "automerge": false,
