@@ -50,7 +50,7 @@ jobs:
           git push
 
       - name: Release
-        if: steps.semVersie.outputs.release == 'true' && github.event.pull_request.merged == true
+        if: steps.semVersie.outputs.release == 'true' && github.event.pull_request.merged
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.semVersie.outputs.tag }}
