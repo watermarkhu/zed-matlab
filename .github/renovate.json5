@@ -1,1 +1,37 @@
-{\n  "$schema": "https://docs.renovatebot.com/renovate-schema.json",\n  "extends": ["config:recommended"],\n  "customManagers": [\n    {\n      "depNameTemplate": "tree-sitter-matlab",\n      "datasourceTemplate": "github-tags",\n      "registryUrlTemplate": "https://github.com/acristoffers/tree-sitter-matlab",\n      "customType": "regex",\n      "fileMatch": ["extension\\.toml$"],\n      // Match the pattern: repository = "..." followed by rev = "<sha>"\n      "matchStrings": [\n        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentValue>[a-f0-9]{40})\""\n      ]\n    }\n  ],\n  "packageRules": [\n    {\n      // Apply to tree-sitter-matlab updates\n      "matchDatasources": ["github-tags"],\n      "matchPackagePatterns": ["tree-sitter-matlab"],\n      // Use conventional commits format\n      "semanticCommits": true,\n      "semanticCommitType": "fix",\n      "semanticCommitScope": "deps",\n      "prTitleTemplate": "fix(deps): update tree-sitter-matlab to {{{newVersion}}}\",\n      // Disable auto-merge for manual review\n      "automerge": false,\n      // Prevent duplicate PRs\n      "prCreation": "not-pending",\n      "labels": ["dependencies", "tree-sitter-matlab"]\n    }\n  ]\n}
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "customManagers": [
+    {
+      "depNameTemplate": "tree-sitter-matlab",
+      "datasourceTemplate": "github-tags",
+      "registryUrlTemplate": "https://github.com/acristoffers/tree-sitter-matlab",
+      "customType": "regex",
+      "fileMatch": ["extension\\.toml$"],
+
+      // Match the pattern: repository = "..." followed by rev = "<sha>"
+      "matchStrings": [
+        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentValue>[a-f0-9]{40})\""
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      // Apply to tree-sitter-matlab updates
+      "matchDatasources": ["github-tags"],
+      "matchPackagePatterns": ["tree-sitter-matlab"],
+
+      // Use conventional commits format
+      "semanticCommits": true,
+      "semanticCommitType": "fix",
+      "semanticCommitScope": "deps",
+      "prTitleTemplate": "fix(deps): update tree-sitter-matlab to {{{newVersion}}}",
+
+      // Disable auto-merge for manual review
+      "automerge": false,
+
+      // Prevent duplicate PRs
+      "prCreation": "not-pending",
+      "labels": ["dependencies", "tree-sitter-matlab"]
+    }
+  ]
+}
