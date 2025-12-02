@@ -14,7 +14,7 @@
       "customType": "regex",
       "fileMatch": ["extension\\.toml$"],
       "matchStrings": [
-        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentValue>[a-f0-9]{40})\"(?<currentDigest>)"
+        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentDigest>[a-f0-9]{40})\""
       ],
       "currentValueTemplate": "main",
       "depNameTemplate": "tree-sitter-matlab",
