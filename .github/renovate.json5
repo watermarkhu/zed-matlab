@@ -14,8 +14,9 @@
       "customType": "regex",
       "fileMatch": ["extension\\.toml$"],
       "matchStrings": [
-        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentDigest>[a-f0-9]{40})\""
+        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentValue>[a-f0-9]{40})\"(?<currentDigest>)"
       ],
+      "currentValueTemplate": "main",
       "depNameTemplate": "tree-sitter-matlab",
       "datasourceTemplate": "git-refs",
       "packageNameTemplate": "https://github.com/acristoffers/tree-sitter-matlab"
@@ -23,20 +24,13 @@
   ],
   "packageRules": [
     {
-      // Apply to tree-sitter-matlab updates
-      "matchDatasources": ["github-tags"],
-      "matchPackagePatterns": ["tree-sitter-matlab"],
-
-      // Use conventional commits format
-      "semanticCommits": true,
-      "semanticCommitType": "fix",
-      "semanticCommitScope": "deps",
-      "prTitle": "fix(deps): update tree-sitter-matlab to {{{newVersion}}}",
-
-      // Disable auto-merge for manual review
+      "matchDatasources": ["git-refs"],
+      "matchDepNames": ["tree-sitter-matlab"],
+      "semanticCommits": "enabled",
+      "commitMessageTopic": "tree-sitter-matlab",
+      "commitMessageAction": "update",
+      "commitMessageExtra": "",
       "automerge": false,
-
-      // Prevent duplicate PRs
       "prCreation": "not-pending",
       "labels": ["dependencies", "tree-sitter-matlab"]
     }
