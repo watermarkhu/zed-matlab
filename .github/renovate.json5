@@ -1,5 +1,5 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: [
     'config:recommended',
     'helpers:pinGitHubActionDigests',
@@ -9,32 +9,41 @@
     ':semanticCommits',
     ':timezone(Europe/Amsterdam)',
   ],
-  "customManagers": [
+  customManagers: [
     {
-      "customType": "regex",
-      "fileMatch": ["extension\\.toml$"],
-      "matchStrings": [
-        "repository = \"https://github\\.com/acristoffers/tree-sitter-matlab\"\\s+rev = \"(?<currentDigest>[a-f0-9]{40})\""
+      customType: 'regex',
+      managerFilePatterns: [
+        '/extension\\.toml$/',
       ],
-      "currentValueTemplate": "main",
-      "depNameTemplate": "tree-sitter-matlab",
-      "datasourceTemplate": "git-refs",
-      "packageNameTemplate": "https://github.com/acristoffers/tree-sitter-matlab"
-    }
+      matchStrings: [
+        'repository = "https://github\\.com/acristoffers/tree-sitter-matlab"\\s+rev = "(?<currentDigest>[a-f0-9]{40})"',
+      ],
+      currentValueTemplate: 'main',
+      depNameTemplate: 'tree-sitter-matlab',
+      datasourceTemplate: 'git-refs',
+      packageNameTemplate: 'https://github.com/acristoffers/tree-sitter-matlab',
+    },
   ],
-  "packageRules": [
+  packageRules: [
     {
-      "matchDatasources": ["git-refs"],
-      "matchDepNames": ["tree-sitter-matlab"],
-      "semanticCommits": "enabled",
-      "semanticCommitType": "refactor",
-      "semanticCommitScope": "deps",
-      "commitMessageTopic": "tree-sitter-matlab",
-      "commitMessageAction": "update",
-      "commitMessageExtra": "",
-      "automerge": false,
-      "prCreation": "not-pending",
-      "labels": ["dependencies", "tree-sitter-matlab"]
-    }
-  ]
+      matchDatasources: [
+        'git-refs',
+      ],
+      matchDepNames: [
+        'tree-sitter-matlab',
+      ],
+      semanticCommits: 'enabled',
+      semanticCommitType: 'refactor',
+      semanticCommitScope: 'deps',
+      commitMessageTopic: 'tree-sitter-matlab',
+      commitMessageAction: 'update',
+      commitMessageExtra: '',
+      automerge: false,
+      prCreation: 'not-pending',
+      labels: [
+        'dependencies',
+        'tree-sitter-matlab',
+      ],
+    },
+  ],
 }
