@@ -24,7 +24,7 @@ jobs:
 
       - name: Calculate version
         id: semVersie
-        uses: RonaldPhilipsen/semVersie@v2.0.0
+        uses: RonaldPhilipsen/semVersie@c934126718f6274426e4044b5ccba35d83faa936 # v2.0.1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
